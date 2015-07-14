@@ -1,0 +1,23 @@
+<% @questions.each do |question| %>
+    <div class="well container">
+      <div class="col-md-6">
+        <%= question.option1tally %>
+        <%= question.option1 %>
+        <%= button_to 'Vote', upvote1_question_path(question) %> 
+      </div>
+      <div class="col-md-6">
+        <%= question.option2tally %>
+        <%= question.option2 %>
+        <%= button_to 'Vote', upvote2_question_path(question) %>
+      </div>
+    </div>
+<% end %>
+
+
+<%= form_for @question do |f| %>
+  <%= f.label :option1 %>
+  <%= f.text_field :option1 %>
+  <%= f.label :option2 %>
+  <%= f.text_field :option2 %>
+  <%= f.submit "Submit Question" %>
+<% end %>

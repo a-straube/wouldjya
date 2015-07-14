@@ -1,0 +1,7 @@
+<% form_for @question do |f| %>
+  <%= f.label :option1 %>
+  <%= f.text_field :option1 %>
+  <%= f.label :option2 %>
+  <%= f.text_field :option2 %>
+  <%= f.submit "Submit Question" %>
+<% end %>
